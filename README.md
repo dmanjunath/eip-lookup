@@ -21,5 +21,8 @@ cargo build --release
 # make executable available globally
 sudo mv ./target/release/eip-lookup /usr/bin/
 eip-lookup 20
+# optional shorthand command
+alias eipl=eip-lookup
+eipl 20
 
 ```
