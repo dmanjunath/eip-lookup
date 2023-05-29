@@ -10,6 +10,7 @@ struct Arguments {
     #[arg(short, long)]
     browser: bool,
 }
+
 #[tokio::main]
 async fn main() {
     let args = parse_clap_args();
@@ -19,7 +20,7 @@ async fn main() {
     let raw_url = make_raw_url(&eip_id);
 
     match check_eip_exists(&raw_url).await {
-        Ok(true) => println!("EIP {} exists", eip_id),
+        Ok(true) => (),
         Ok(false) => {
             eprintln!("EIP {} does not exist", eip_id);
             std::process::exit(1);
